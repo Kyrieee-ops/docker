@@ -1,0 +1,55 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    #volumesとはデータを永続化できる場所のこと
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./www/html/php_message:/var/www/html/php_message
+    depends_on:
+      - php
+      - mysql #depends_onで指定したサービスに依存する。この例だと「php」「mysql」に依存
+  # php
+  php:
+    image: php:7.2-fpm
+    #build: ./php
+    volumes:
+      - ./www/html/php_message:/var/www/html/php_message
+    depends_on:
+      - mysql
+  
+  # mysql
+  mysql:
+    image: mysql:5.7.11
+    #build: ./mysql
+    ports:
+      - 3306:3306
+    volumes:
+      #永続化するときにマウントするdir
+      - ./mysql/data:/var/lib/mysql
+      #初期データを投入するSQLが格納されているdir
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      #文字化けの対処
+      #- ./conf/my.cnf:/etc/mysql/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root #管理者password
+      MYSQL_DATABASE: test_database #dbname 
+      MYSQL_USER: root #user
+      MYSQL_PASSWORD: root #mysql password
+      TZ: 'Asia/Tokyo'
+    #command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb_use_native_aio=0
+  # phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.5.3.1-1
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8888:8080"
+    depends_on:
+      - mysql
