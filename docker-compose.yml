@@ -13,8 +13,8 @@ services:
       - mysql #depends_onで指定したサービスに依存する。この例だと「php」「mysql」に依存
   # php
   php:
-    image: php:7.2-fpm
-    #build: ./php
+    #image: php:7.2-fpm
+    build: ./php
     volumes:
       - ./www/html/php_message:/var/www/html/php_message
     depends_on:
@@ -39,7 +39,8 @@ services:
       MYSQL_USER: root #user
       MYSQL_PASSWORD: root #mysql password
       TZ: 'Asia/Tokyo'
-    #command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    #my.cnfファイルに以下のコマンドを記述した方がスマートだが、上手くマウント出来なかったため止む無くここに記載
+    #文字化け対策　innodb_use_native_aio=0⇒aioを無効にする
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb_use_native_aio=0
   # phpmyadmin
   phpmyadmin:

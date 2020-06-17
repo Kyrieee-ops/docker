@@ -1,0 +1,419 @@
+@charset "UTF-8";
+/*========= base ==========*/
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Yu Gothic", "遊ゴシック",  YuGothic, "游ゴシック体", sans-serif;
+  font-weight: 500;
+  color: #333333;
+  line-height: 2.0;
+}
+
+h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+img {
+    width: 100px;
+    vertical-align: bottom;
+}
+*/
+ul, li, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+  opacity: 0.6;
+}
+
+/*
+section {
+    margin-bottom: 120px;
+}
+*/
+/*
+.content-wrapper {
+    width: 1400px;
+    margin: 0 auto;
+}
+*/
+.copyright {
+  color: white;
+  background-color: #333;
+}
+
+.copyright p {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 0;
+  line-height: 100px;
+}
+
+/* =============form============= */
+.header-text {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.form {
+  text-align: center;
+}
+
+/* 名前inputboxの見出し */
+.name {
+  padding: 10px 0;
+  border-bottom: 1px dotted #676767;
+}
+
+.name dt {
+  font-size: 1.6rem;
+}
+
+.name .red {
+  color: red;
+}
+
+/* inputboxの大きさ指定 */
+.name dd input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: #dbdbdb;
+  padding-left: 10px;
+}
+
+.name dd input:focus {
+  border: 1px solid #0051ff;
+  z-index: 10;
+  outline: 0;
+}
+
+/* 相手の名前inputboxの見出し */
+.partner_name {
+  padding: 10px 0;
+  border-bottom: 1px dotted #676767;
+  /* borderの長さ指定については一度ちゃんと調べる
+    &:befor {
+        content: "";
+        border-bottom: 1px dotted #676767;
+        width: 70%;;
+    }
+    */
+}
+
+.partner_name dt {
+  font-size: 1.6rem;
+}
+
+.partner_name .red {
+  color: red;
+}
+
+.partner_name dd input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: #dbdbdb;
+  padding-left: 10px;
+}
+
+.partner_name dd input:focus {
+  border: 1px solid #0051ff;
+  z-index: 10;
+  outline: 0;
+}
+
+/* 文章inputbox見0出し */
+.text1 {
+  padding: 10px 0;
+  border-bottom: 1px dotted #676767;
+}
+
+.text1 dt {
+  font-size: 1.6rem;
+}
+
+.text1 .red {
+  color: red;
+}
+
+/* 行数名 
+.text1 dd  {
+    //display: flex;
+}
+*/
+.text1 dd {
+  font-size: 1.8rem;
+}
+
+.text1 textarea {
+  font-size: 1.8rem;
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background: #dbdbdb;
+  padding-left: 10px;
+}
+
+.text1 textarea:focus {
+  border: 1px solid #0051ff;
+  z-index: 10;
+  outline: 0;
+}
+
+/* エラーメッセージ */
+.error {
+  margin: 0 auto;
+  font-size: 1.4rem;
+  color: red;
+}
+
+.form-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px auto 20px auto;
+}
+
+.form-button input {
+  /*
+        display: block;
+        text-align: center;
+        color: #444;
+        background-color: #dbdbdb;
+        cursor: pointer;
+        transition: all .3s ease;
+        width: 250px;
+        height: 40px;
+        border-radius: 50px;
+        &:hover{
+            background-color:transparent;
+            background-color: #353535;
+            color: #fff;
+            transition: .3s ease all
+        
+
+        }
+        */
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #5384e7;
+  color: #fff;
+  border-style: none;
+  box-shadow: 2px 2px 3px 1px #666;
+  -moz-box-shadow: 2px 2px 3px 1px #666;
+  -webkit-box-shadow: 2px 2px 3px 1px #666;
+  border-radius: 20px;
+}
+
+.form-button input:hover {
+  background-color: #24d;
+  color: #fff;
+}
+
+/* =============/form(index.php)============= */
+/* =============確認画面(confirm.php)============= */
+/* 確認画面 headerの指定 */
+/* スマホ、タブレット対応の文字の大きさ指定をする必要あり */
+.confirm-text {
+  font-size: 3.4rem;
+  padding-left: 30px;
+}
+
+/* 確認画面 入力値のスタイル指定 */
+.from-wrap {
+  font-size: 1.8rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.confirm-contens {
+  background: #F4FAFA;
+}
+
+.confirm-contens dt {
+  font-weight: bold;
+}
+
+.msg-confirm {
+  font-size: 3.0rem;
+  margin: 10px 0;
+}
+
+.msg-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.msg-text1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.msg-text1 dt {
+  width: 16%;
+}
+
+.msg-text1 dt dd {
+  width: 100%;
+}
+
+.msg-text2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.msg-text2 dt {
+  width: 16%;
+}
+
+.msg-text2 dt dd {
+  width: 100%;
+}
+
+.msg-text3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.msg-text3 dt {
+  width: 16%;
+}
+
+.msg-text3 dt dd {
+  width: 100%;
+}
+
+.msg-text4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.msg-text4 dt {
+  width: 16%;
+}
+
+.msg-text4 dt dd {
+  width: 100%;
+}
+
+.btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  padding-left: 50px;
+}
+
+.btn-wrap .btn input {
+  margin-right: 20px;
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #5384e7;
+  color: #fff;
+  border-style: none;
+  box-shadow: 2px 2px 3px 1px #666;
+  -moz-box-shadow: 2px 2px 3px 1px #666;
+  -webkit-box-shadow: 2px 2px 3px 1px #666;
+  border-radius: 20px;
+}
+
+.btn-wrap .btn input:hover {
+  background-color: #24d;
+  color: #fff;
+}
+
+/* =============/確認画面(confirm.php)============= */
+/* スマホ表示 */
+@media screen and (max-width: 559px) {
+  .text1 dd {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+  .text1 textarea {
+    width: 80%;
+    height: 70px;
+    border: none;
+    background: #dbdbdb;
+    padding-left: 10px;
+  }
+  .msg-confirm {
+    font-size: 2.0rem;
+  }
+  .msg-name, .msg-text1, .msg-text2, .msg-text3,
+  .msg-text4 {
+    font-size: 1.2rem;
+  }
+  /*
+    .msg-text1, .msg-text2, .msg-text3,
+    .msg-text4 dt {
+        width: 130%;
+    }
+    */
+}
+
+/* タブレット～PCまでの表示 */
+@media screen and (min-width: 560px) and (max-width: 960px) {
+  .text1 dd textarea {
+    width: 80%;
+    height: 65px;
+    border-radius: 5px;
+    border: none;
+    background: #dbdbdb;
+    padding-left: 10px;
+  }
+  .msg-confirm {
+    font-size: 2.4rem;
+  }
+  .msg-name, .msg-text1, .msg-text2, .msg-text3,
+  .msg-text4 {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
